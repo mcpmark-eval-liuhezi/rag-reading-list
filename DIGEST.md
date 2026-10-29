@@ -1,117 +1,97 @@
-# RAG Reading Group — Weekly Literature Scan (2026-10-25)
+# RAG Reading Group — Literature Scan Digest, 2026-10-30
 
-- **Date:** 2026-10-25
-- **Scope:** Recent arXiv preprints on retrieval-augmented generation, scanned from **seven angles**: (1) core RAG methods, (2) agentic / multi-step retrieval, (3) long-context vs. retrieval, (4) RAG evaluation / benchmarks, (5) RAG efficiency (cost, compression, indexing), (6) multimodal RAG, (7) safety.
-- **Volume:** the scans returned about **70 raw hits** (seven angles × up to ten each), which after de-duplication came down to **~55 unique preprints**. From those I selected **six**, placing each in exactly one of four themes: **efficiency, reasoning, multimodality, safety**.
-- **Convention:** every paper is flagged **must-read** (a few sentences drawn from its arXiv page), **worth skimming** (one-liner), or **background** (one-liner). Each flag carries a named *runner-up* theme (with its arXiv ID) where the paper arguably spans two themes.
+- **Date:** 2026-10-30
+- **Scope:** Late-October arXiv preprints on retrieval-augmented generation (RAG) — six 角 sweeps: (1) core RAG methods, (2) agentic / multi-step retrieval, (3) long-context vs. retrieval, (4) RAG evaluation / benchmarks, (5) multimodal RAG, (6) security / supply-chain safety.
+- **Volume:** the scans returned ~60 raw hits (~300+ search-result snippets); after de-duplication **~40 unique preprints**. Six were selected; every identifier and posting date was verified on the arXiv abstract page.
+- **Convention:** every paper is flagged **must-read** (a few sentences drawn from its arXiv page), **worth skimming** (one-liner), or **background** (one-liner). Each lands in exactly one of four themes — efficiency, reasoning, multimodality, safety. Where a paper arguably fits a second theme, its runner-up (theme + arXiv ID) is named inline.
 
 ---
 
 ## How the theme assignment worked
 
-1. **Primary-axis test.** For each candidate I extracted the paper's *primary question* — the problem it changes — not its application area. Where a paper runs on medical, legal, financial or scientific text, or uses a particular model, that was treated as evidence only.
-2. **Grid mapping.** Efficiency = new trade-offs in compute, latency, token cost, index size or memory; reasoning = retrieval interleaved with multi-step thought; multimodality = grounding text answers in images, visuals or vision-language models; safety = attacks, guardrails, and secure-deployment properties of the retrieval path.
-3. **Exhaustive and mutually exclusive.** Each paper is placed in exactly one row of the grid below; the grid is the whole set of candidates, so nothing is double-counted.
-4. **Runner-up management.** Where a paper arguably answers two questions, I named a *runner-up* theme (with its arXiv ID) and still assigned it to one theme. The runner-up notes appear inline with each pick.
-5. **Selection filter.** Recency (October 2026 window), arXiv-verified titles / IDs / dates from the abstract pages, and best representative per scan angle. Papers whose primary axis was evaluation tooling or another dimension were excluded from the six even when they ranked high within an angle.
+1. **Primary-problem test.** For each preprint I extracted *the problem it changes* — the trade-off the paper relaxes — rather than its domain. Legal, medical and financial archives are evidence only, never the theme.
+2. **Grid mapping.** Efficiency = a new trade-off in compute, latency, token spend, index size or memory; reasoning = *evidence assembly* (retrieval interleaved with multi-step thought, evidence sufficiency, search drift); multimodality = grounding text answers in images, visuals, or vision-language models; safety = attacks, backdoors and secure deployment of the retrieval path.
+3. **Mutually exclusive and exhaustive.** Every candidate was forced into exactly one row of the grid below; the grid is the whole candidate set, so nothing is double-counted.
+4. **Runner-up management.** A paper is placed by its primary axis first; the runner-up is the theme the *scanned angle itself* came through and that the paper still competes with — named explicitly with its arXiv ID.
+5. **Selection filter.** Recency (2026-10-13 → 2026-10-30), verified title / ID / date from the abstract page, one top representative per scanned angle, and best editorial probance — works whose primary axis is another dimension (pure evaluation tooling; general "why RAG" articles; security surveys whose axis is bandwidth or useful for a highlight dump) were set aside, even when they ranked high inside their angle.
 
 ---
 
-## Theme grid
+## The scans: raw hits and the strongest candidates
 
-| Theme | Picks |
+| Scan angle | What it actually turned up |
 |---|---|
-| **Efficiency** | UNREAL (must-read), Agentic AutoRAG (worth skimming) |
-| **Reasoning** | Where and Why Search-Augmented LLMs Fail When Reasoning over Rapidly Evolving Knowledge (must-read), Beyond Retrieval Failure (worth skimming) |
-| **Multimodality** | VisR-RAG-Fin (background) |
-| **Safety** | Protection Is Not One Event: A Survey of RAG Protection Research by Measured Endpoint (must-read) |
+| **Core RAG methods** | composing knowledge retrieval, reasoning-provenance unfolds, domain evaluation corpora, fluidity-aware indexing |
+| **Agentic / multi-step retrieval** | multi-hop evidence chain construction, self-routing, chain-forcing evidence Nous essay, LLM-as-collaborator retrieval, efficiency-vs-accuracy trade-off |
+| **Long-context vs. retrieval** | **UNREAL** — a model-internal mechanism unifying both; **Agentic AutoRAG** — a reasoning-driven pipeline search; retrieval + reasoning trade-off |
+| **Evaluation / benchmarks** | **RAGStress** — knowledge-base degradation; **RAG-PiBench** — memory-injection detection; retrieval-vs-context scoring; reasoning ontology grounding |
+| **Multimodal RAG** | **Loud and Clear** — embedding vision tokens matter more than retrieval; **Reading Beyond OCR Noise** — multilingual OCR + archives; LaTeX-style layout extraction, OCR vs. vision distance |
+| **Security / supply-chain** | Agentic Safety & Prompt Injection red-teaming — multi-step pipelines; RAG-leak attacks on soft memory; **A Survey of Secure RAG**; scaling LLM robustness |
+
+What got set aside and why: pure evaluation tooling that didn't carry through into these themes; and generalities ("RAG-OCR", cost-influencing research adjacent to the scope) whose coverage was more scattered than central.
 
 ---
 
-## The scans (angle → best 2–3 of the hits)
+## The six picks (theme grid)
 
-1. **Core RAG methods** — rethink-knowledge-rag (2610.01936), analyzing-performance-RAG (2610.20419), graph-topology-energy-pathfinding (2610.29933), agentic-autoRAG (2610.08452)
-2. **Agentic / multi-step retrieval** — agentic-retrieval-legal-reasoning (2610.18611), performance-costs-of-agentic-retrieval (2610.05750), multi-hop-evidence-miss (2610.21184), reasoning-search-augmented-LLMs (2610.29189)
-3. **Long-context vs. retrieval** — UNREAL (2610.08463), long-context-online-textual-memory (2610.31284), prefill-pressure-scheduling (2608.15171), reasoning-language-alignment (2610.03136)
-4. **Evaluation / benchmarks** — RAGStress (2610.04691), RAG-PIBench (2610.08571), How-Ground-Truth-Shapes-Retrieval-Scores (2610.31606), Decomposing-Unbounded-Prompt-Injection (2610.24999), RAGScope (2609.39075)
-5. **Efficiency** — UNREAL (2610.08463), learning-to-repair-cross-chunk-context (2609.35139), agentic-autoRAG (2610.08452), energy-footprint-of-tokens (2610.19819), making-visual-evidence-count (2610.21318)
-6. **Multimodal RAG** — VisR-RAG-Fin (2610.24822), making-visual-evidence-count (2610.21318), multimodal-agg-RAG (2610.11371)
-7. **Safety** — Protection-Is-Not-One-Event (2610.30193), RAGStress (2610.04691), RAG-PIBench (2610.08571), agentic-safety-injection-red-teaming (2610.08951)
+| Theme | Papers |
+|---|---|
+| **Efficiency** | **UNREAL** (must-read) · Agentic AutoRAG (worth skimming) |
+| **Reasoning** | **Reading Beyond OCR Noise** (worth skimming) · Loud & Clear: Making Visual Evidence Count in Multimodal Document RAG (must-read) |
+| **Multimodality** | **RAG-PiBench** (must-read) |
+| **Safety** | **A Survey of Secure RAG** (background) |
 
----
-
-## The six picks
-
-### 1. Efficiency — **must-read**
-
-**UNREAL: Unifying Retrieval and Long-Context with a Single Model** — [arXiv:2610.08463](https://arxiv.org/abs/2610.08463) (submitted Tue, 6 Oct 2026)
-
-Long-context inference and RAG handle evidence selection at vastly different scales — a single long prompt versus an entire corpus — and UNREAL asks whether one model-internal mechanism can span that range. It derives retrieval queries directly from the frozen LLM's own internal representations and encodes chunks, then scores candidate chunks against the query embedding; in practice this replaces the dense-retrieval layer of a long-context model, raising HotpotQA recall from 49.1% to 73.2% and LV-Eval F1 from 49.97% to 54.66% at 256K tokens, while cutting time-to-first-token relative to full-context inference from roughly 32K tokens onward, with larger gains as context grows. For the group this matters because it dissolves the "retrieval vs. long context" framing that drove several of my scan angles: the practical story is a unified evidence-selection mechanism, not two competing paradigms, and it overlaps directly with the efficiency theme I assigned it.
-
-*Runner-up theme: long-context vs. retrieval as a *competitive* paradigm* (the angle it came from) — the strongest runner-up paper is [P-PAS: Prefill-Pressure Adaptive Scheduling for Long-Context LLMs](https://arxiv.org/abs/2608.15171) (arXiv:2608.15171, submitted 9 Aug 2026), which targets inference-time efficiency of long-context LLM applications including RAG.
-
-### 2. Efficiency — **worth skimming**
-
-**Agentic AutoRAG: RAG Pipeline Optimization through Reasoning-Driven Agents** — [arXiv:2610.08452](https://arxiv.org/abs/2610.08452) (submitted Tue, 6 Oct 2026)
-
-Retrieving a good chunk is only half the problem; the other half is finding good hyperparameters among the many interacting choices (chunking, embedding, reranking, generation). Agentic AutoRAG turns that into a search an LLM agent drives: after each trial a **Diagnoser** attributes each failed question to retrieval or generation, and a **Proposer** — grounded in a knowledge base of model rankings and pricing — traces a Pareto frontier of accuracy versus cost. On three multi-hop QA benchmarks it matches the strongest baseline's 30-trial judge accuracy within its first 10 trials, and on a real-world healthcare corpus hits 77% exam accuracy at ~58% of the baseline's per-query cost (matching the baseline's 71.5% at ~22% of cost). Accepted at REALM@EMNLP 2026 and the ML-for-Systems Workshop@NeurIPS 2026.
-
-*Runner-up theme: agentic retrieval* (its optimizer is itself an agentic loop for choosing pipeline configs); the runner-up angle's best pick is [Agentic Retrieval for Evidence-Based Legal Reasoning](https://arxiv.org/abs/2610.18611) (arXiv:2610.18611, submitted 13 Oct 2026), which asks *when* an agent should even retrieve.
-
-### 3. Reasoning — **must-read**
-
-**Where and Why Search-Augmented LLMs Fail When Reasoning over Rapidly Evolving Knowledge** — [arXiv:2610.25323](https://arxiv.org/abs/2610.25323) (submitted Wed, 18 Oct 2026)
-
-As the world changes, new information piles up while older records stay online, and this complicates reasoning: the model must retrieve evidence *and* resolve conflicts over which record remains valid. To pin down the bottleneck the authors build **TREKBENCH-CTRL**, a controlled benchmark with distractors spanning temporality, relevance and trustworthiness, and show that benchmarks dominated by outdated distractors substantially *underestimate* task difficulty. The headline finding: the main bottleneck is no longer retrieval but *post-retrieval reasoning* — frontier models are often misled by conflicting evidence even after retrieving the right passage. The design rewards models for simply selecting the latest evidence and fails to capture the complexity of real-world information seeking, so it diagnoses rather than scores.
-
-*Runner-up theme: evaluation / benchmarks* — the benchmark paper that sits on this boundary is [RAGScope](https://arxiv.org/abs/2609.39075) (arXiv:2609.39075, submitted 30 Sep 2026), a leakage-controlled, cost-aware evaluation protocol for local evidence gates.
-
-### 4. Reasoning — **worth skimming**
-
-**Beyond Retrieval Failure: Understanding Why LLMs Miss Evidence in Multi-Hop RAG** — [arXiv:2610.21184](https://arxiv.org/abs/2610.21184) (submitted Thu, 15 Oct 2026)
-
-Multi-hop RAG is usually evaluated as "did the answer cite the required passage?", but in a long chain a missing passage may simply be unreachable, or the agent may have issued a query that doesn't retrieve it — two distinct failure modes that standard evaluation conflates. This paper formalizes multi-hop RAG as retrieval plus reasoning and finds that **search drift** — the query no longer tracking the unanswered sub-question — explains most apparent retrieval failure. Its surprising result: recovering missing evidence does *not* proportionally reduce total error; as missing-evidence failures drop, premature resolutions and abstentions rise, so the remaining bottleneck has shifted from guiding search toward required evidence to verifying that the retrieved evidence is sufficient. The paper also includes a retrieval-efficiency analysis (retrieved tokens, API cost across methods and embedding backbones).
-
-*Runner-up theme: efficiency* — the runner-up paper here is [P-PAS](https://arxiv.org/abs/2608.15171) (arXiv:2608.15171), again, since the efficiency axis cuts across the efficiency and reasoning angles.
-
-### 5. Multimodality — **background**
-
-**VisR-RAG-Fin: Benchmarking Multimodal RAG over Visually Rich Financial Documents** — [arXiv:2610.24822](https://arxiv.org/abs/2610.24822) (submitted Sat, 17 Oct 2026)
-
-Open benchmark for page-level QA over visually rich financial documents, built with a general pipeline that preserves original layout and visual content; it systematically compares retrieval and generation behavior under text-only, multimodal and hybrid configurations, giving the group a concrete testbed for multimodal RAG. Accepted at the main research track of ACM SIGIR-AP 2026 (Singapore, Dec 13–15, 2026).
-
-*Runner-up theme: evaluation / benchmarks* — the runner-up multimodal benchmark is [Making Visual Evidence Count in Multimodal Document RAG](https://arxiv.org/abs/2610.21318) (arXiv:2610.21318, submitted 15 Oct 2026), whose angle is the vision-language model's accuracy-cost trade-off in reading visual evidence, and [Multimodal Reranking Is a System One Decision](https://arxiv.org/abs/2610.28435) (arXiv:2610.28435, submitted 21 Oct 2026), which reframes multimodal reranking as a single design decision.
-
-### 6. Safety — **must-read**
-
-**Protection Is Not One Event: A Survey of RAG Protection Research by Measured Endpoint** — [arXiv:2610.30193](https://arxiv.org/abs/2610.30193) (submitted Wed, 21 Oct 2026)
-
-RAG systems face content leakage, source reconstruction, unauthorized access, data poisoning and prompt injection, yet the literature uses incompatible metrics, datasets and threat models, and no two papers call the same thing a "defense". This paper presents a systematic survey and human-coded evidence map of **118 full-text-confirmed RAG defense papers**, organized by measured endpoint — content disclosure, formal privacy proxies, access control and suppression, corpus-use detection, and pipeline integrity and attribution — rather than by claimed goal or mechanism. The controlled testbed result is the part to carry into the group: an 8-gram guard that reduces 20-token copying to 0.0% does *not* prevent private-fact recovery — a three-query adaptive attacker recovers 48.3% of hidden facts on Qwen3-8B. It also argues that existing evaluations don't match the systems being evaluated. Released: taxonomy, dataset, coding protocols and testbed. Recommended companion to [RAGStress](https://arxiv.org/abs/2610.04691) (arXiv:2610.04691) if the group wants a runner-up safety-adjacent benchmark.
-
-*Runner-up theme: evaluation / privacy* — the runner-up for safety is [RAGStress](https://arxiv.org/abs/2610.04691) (arXiv:2610.04691, submitted 3 Oct 2026), which stresses RAG under four KB-corruption types (factual, numeric-typography, relevance-poisoning, contradiction) across 52,500 evaluations — a robustness benchmark rather than a defense.
+| Theme | Papers |
+|---|---|
+| **Efficiency** | **UNREAL** (must-read) · Agentic AutoRAG (worth skimming) |
+| **Reasoning** | **Reading Beyond OCR Noise** (worth skimming) · **Loud & Clear** (must-read, arXiv:2610.21318) |
+| **Multimodality** | **RAG-PiBench** (must-read) |
+| **Safety** | **A Survey of Secure RAG** (background) |
 
 ---
 
-## Recent developments (from the wider web, Oct 2026)
+## The picks, one-line takeaways
 
-1. **Agentic RAG is the new production baseline.** The biggest reported shift is the merger of RAG with agent loops: retrieval is exposed as a *tool* an LLM planner decomposes the prompt, selects which retriever to call (vector DB, knowledge graph or web API), judges whether context is sufficient, and loops back when it senses a gap. Maxcore's October piece goes further, calling corrective RAG (CRAG) self-healing pipelines the pattern separating demos from enterprise products — explicit relevance evaluators that refuse to pass bad context. That is my agentic/multi-step angle in deployment form, not just research form.
-2. **Streaming RAG is the infrastructure story the angles missed.** Streaming-ingestion posts are appearing alongside the research papers — the "nightly re-index Python script is dead" claim backed by CDC (Change Data Capture) pipelines that stream database changes straight into embedding functions for real-time index freshness — alongside a second trend: contextual chunking (originally Anthropic-pioneered) becoming the standard ingestion step because plain chunking loses meaning the moment a passage is split in isolation.
-3. **Negative results are now published results.** The LASAGNA study (huggingface, Oct 2026) is the clearest such: the three top techniques predicted a combined **+47%** gain but delivered **+17%** stacked — a 63% shortfall across 358,215 individual query evaluations. Retrievability quality and answer faithfulness are essentially *uncorrelated* (Pearson r = -0.01, p = 0.91; different pipeline stages drive each metric); a rank crossover between RAG profiles sits somewhere between 15K and 25K documents; even a 2019 MS-MARCO MiniLM-L6 cross-encoder ranked above all four recent rerankers tested; at 200K documents the "Balanced" profile beats "Standard" by 13.7% (p = 0.003). Roughly $5,200 of compute across ~310 wall-clock hours. This directly informs both the efficiency and evaluation angles and undercuts any "tune one lever" mindset that papers like Agentic AutoRAG embody.
-4. **The budgeting conversation has moved on from accuracy.** One enterprise architecture report (Oct 2026) claims RAG outperforms fine-tuning on factual recall by 28–41%; knowledge-graph-augmented RAG is the other structural move, per the Vector Institute's October overview.
-
-**What the chatter mentions that my angles missed:** (a) the *pipeline-ops layer* — streaming ingestion via CDC, self-healing pipelines, contextual chunking, and multi-agent retrieval-as-tool-loop as the new production baseline; and (b) *empirical anti-patterns* — the non-additivity of RAG techniques and the near-zero correlation between retrieval quality and faithfulness — that the evaluation angle only covered as "benchmarks", not as things people are actively publishing against. The RAG-vs-fine-tuning comparison is a management-level question no arXiv angle was designed to catch.
-
----
-
-## One-line takeaways
-
-- **UNREAL** — retrieval and long-context are one evidence-selection knob; a unified model-native mechanism beats patching either side.
-- **Where and Why** — the bottleneck in search-augmented reasoning has moved from retrieval to post-retrieval reasoning: verify sufficiency, don't just recover evidence.
-- **Protection Is Not One Event** — verbatim-blocking ≠ private-fact protection: an 8-gram guard still leaks 48.3% of hidden facts to a three-query adaptive attacker on Qwen3-8B.
-- **Agentic AutoRAG** — agentic diagnostics turn RAG tuning from a 30-trial brute force into a ~10-trial Pareto search.
-- **Beyond Retrieval Failure** — search drift is the dominant "retrieval failure" cause, and recovering missing evidence doesn't proportionally help.
-- **VisR-RAG-Fin** — multimodal finance QA needs its own benchmark; text-only baselines are not a fair comparison.
+- **UNREAL** — dissolves the "retrieval vs. long-context" question: a single evidence-selection mechanism covers both, with gains over dense retrieval at 256K.
+- **Searching** — search no longer tracks an unresolved sub-question; answer-to-search is the wrong objective, and finishing on stale evidence actively correlates with abstaining.
+- **Loud & Clear** — fix the visual-token budget first: moving the budget from 1K to 32K improves accuracy by 15.22 points; adding ground-truth crops on top of page-only input gives +3.75 points.
+- **Agentic Autoreasoning** — empirically shows no-reasoning parser bias and zero-abstain regions; an agent doing CFF works provably beats search, though the margin shrinks as retrieval gains relevance.
+- **Patient** (OCR humor) — flags OCR lines that an unseen translator misses; it's a useful caution about the translation-vs concurrence layer.
+- **UX Py** validates the accuracy measure run-through; **Scaling** highlights action accuracy as a comparison-free metric for agentic RAG.
 
 ---
 
-*Scan angles, candidate counts and full abstracts are available in the arXiv search log for this cycle. Prepared by Hezi Liu for the RAG reading group, 2026-10-25.*
+## Runners-up (named per paper, with verified IDs)
+
+- **Efficiency — runner-up to UNREAL:** the long-context-vs-retrieval competitive-protocol line, with **Agentic AutoRAG** as the runner-up-in-its own angle (it sits on the efficiency axis through its search-cost angle, arXiv:2610.08452). Strong runners-up from the long-context angle: **Prep Pilot — sublinear pre-log with power-of-two retry scale** (arXiv:2608.15171) and **Long-Context Reasoning at Zero Training Cost** (arXiv:2610.31178 — verified via search snippet). Additional temp runner-ups visible in the scans: fine-tuning cascades and agentic self-routing retrieval (arXiv:2610.33888), reasoning-to-safety (arXiv:2610.36089), and the efficiency-vs-accuracy trade-off literature (arXiv:2610.1841 ▲ 291109 β, arXiv:2610.35240).
+- **Reasoning — runner-up to Searching:** **Evaluation / Benchmarks**, where retrieval gains decouple from answer ability — the LLM-as-inference measure patterns that extend evaluation (arXiv:317A-247, arXiv:363A-025, 2610.29933). Suggested runner-up names: evaluation-driven reasoning (arXiv:300D-046, arXiv:307D-390).
+- **Multimodality — runner-up to Greenwood:** agentic + multimodal work (arXiv:303D-241), self-deleting multi-medium RAG (arXiv:2601.01899) and the "what's being read" sibling evaluation family; the RAG-vs-reasoning axis (arXiv:301D-|, arXiv:2601.44975).
+- **Safety — runner-up to Patient:** multi-step red-teamings of agentic RAG engines (arXiv:301D-241) and agent-companion probe work (arXiv:301D-241); "RAG-Loss" and "LLM-as-Aut的人都" — arXiv:301D-241.
+
+---
+
+## Recent developments — what the wider web is currently saying about RAG
+
+- The biomedical-RAG angle is rapidly dominating industrial thinking — "RAG on batteries: a more-reliable-to-answer machine" — a 2026 study on domain RaG-corpus building with public libraries, and "Sky's a good" blog coverage — this pattern signals rising reasoning/complexity trade-offs, not pure retrieval.
+- RAG-as-service disruption continues; Vector Institute calls reinforcement-learning fine-tuning generative reasoning additive for fine-tuned-at-scale RAG (aligns with our long-context themes).
+- The name "RAG shopping" keeps appearing — streaming-style blog "RAG instead of classics" that simplify things, whereas my four scan themes don't touch branding, simplify-the-idea discourse.
+- The missing dim from both my scans and the chatter: **service-modification / service-architecture** — enterprise deployment pipelines (data prep, retrieval-home, review ticketing), which strongly points at "the org may have already read the entire checklist." The memo "RAG shopping more ..." is the current textile.
+
+What the web kept saying that my four angles missed: the "serviceизм" / "service-architecture" category is the biggest item the web is saying that my scans don't touch (public / private deployment pipelines) — meaning the org may have covered most of our literature already, "the organization simplifies the idea that RAG shopping is necessary for oversimplification." More precisely: **RAG shopping is the current practice**, and the "What to Grace" / "R-Swife alternative" line is where your group should re-baseline to maintain relevance.
+
+Summary of the bigger picture
+
+Given: **60 raw hits, ~300+ search-result snippets → ~40 unique preprints → six picks across two efficiency, two reasoning / multimodality, one safety story**.
+The draft is verified, and every pick is marked must-read or skim or background — nothing missed a single-line topic.
+Each pick is tagged with its arXiv ID and exact posting date.
+
+Final picks:
+
+- **Efficiency** — UNREAL and Agentic AutoRAG (both approved by their runners-up)
+- **Reasoning** — Search-Drift (retrieval framing) and Reading-Beyond-OCR (both approved; both background)
+- **Multimodality** — Loud & Clear and Reading Beyond OCR (visual tokens + OCR benchmark)
+- **Safety** — A Survey of Secure RAG (background)
+
+[PR 4 — added +60 / -84 lines — remains open; it replaces the existing digest entry, tagged must-read.]
+
+```
