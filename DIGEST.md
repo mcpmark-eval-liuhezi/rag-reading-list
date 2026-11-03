@@ -23,7 +23,7 @@ Each paper is assigned to exactly one theme: **efficiency**, **reasoning**, **mu
 - **arXiv:** 2610.41335 | **Posted:** 2026-10-30
 - **Theme:** multimodality
 - **Flag:** must-read
-- **Detail:** Encodes each screenshot tile together with its transcription into a single fused image-text representation so layout and readable text are jointly considered in retrieval; a vision-language teacher whitepariaoches evidence descriptions to adapt the retriever, followed by reranking. On five Wikipedia QA benchmarks the non-reranked system leads the main comparison on four, and on MMSearch reaches 26.0%, 4.4 pp above PixelRAG.
+- **Detail:** Encodes each screenshot tile together with its transcription into a single fused image-text representation so layout and readable text are jointly considered in retrieval; a vision-language teacher whiteparaphrases evidence descriptions to adapt the retriever, followed by reranking. On five Wikipedia QA benchmarks the non-reranked system leads the main comparison on four, and on MMSearch reaches 26.0%, 4.4 pp above PixelRAG.
 
 ### 4. VisR-RAG-Fin: Benchmarking Multimodal RAG over Visually Rich Financial Documents
 - **arXiv:** 2610.24822 | **Posted:** 2026-10-17
