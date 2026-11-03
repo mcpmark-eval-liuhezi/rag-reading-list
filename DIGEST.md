@@ -53,7 +53,7 @@ Each paper is assigned to exactly one theme: **efficiency**, **reasoning**, **mu
 ### Runner-up themes
 - Q-RAG also fits **reasoning** (multi-step search) and **long-context** angles.
 - MetaRAG also touches **evaluation/reproducibility**.
-- Pix2Evidence also overlaps **evaluation** ( benchmark construction).
+- Pix2Evidence also overlaps **evaluation** (benchmark construction).
 - VisR-RAG-Fin also fits **evaluation/benchmarks** squarely.
 - LoRA trade-offs also relate to **evaluation** (benchmark construction) and **long-context** (token-level F1).
 
